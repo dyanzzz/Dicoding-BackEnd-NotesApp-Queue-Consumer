@@ -19,10 +19,10 @@ class MailSender {
             to: targetEmail,
             subject: 'Export Catatan',
             text: 'Terlampir hasil dari export catatan',
-            attachment: {
+            attachments: [{
                 filename: 'notes.json',
-                content
-            }
+                content,
+            }]
         };
 
         return this._transporter.sendMail(message);

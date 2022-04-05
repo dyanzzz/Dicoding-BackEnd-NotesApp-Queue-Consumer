@@ -11,8 +11,8 @@ class Listener {
             const { userId, targetEmail } = JSON.parse(message.content.toString());
 
             const notes = await this._notesService.getNotes(userId);
-            const result = await this._mailSender.sendEmail(targetEmail, JSON.stringify(notes));
-            return result;
+            const result = await this._mailSender.sendMail(targetEmail, JSON.stringify(notes));
+            console.log(result);
         } catch (error) {
             console.error(error);
         }
